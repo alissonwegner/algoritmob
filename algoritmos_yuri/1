@@ -1,0 +1,19 @@
+##include <stdio.h>
+##include <stdlib.h>
+int main() {
+FILE *fp;
+char c;
+if ((fp = fopen("teste.txt")) == NULL) {
+PUTS("Erro ao abrir o arquivo");
+exit(1);
+}
+  c = getc(fp);
+  while(!feof(fp)){
+    printf("%c", c);
+    c = getc(fp);
+  }
+  printf("\n");
+  fseek(fp 0,SEEK_SET);
+  for (c = getc(fp); !feof(fp); printf("%c", c), c = getc(fp));
+  fclouse(fp);
+}
